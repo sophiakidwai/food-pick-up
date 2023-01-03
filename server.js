@@ -29,23 +29,23 @@ app.use(express.static('public'));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const userApiRoutes = require('./routes/users-api');
-//const menuApiRoutes = require('./routes/menu-api');
+// const menuApiRoutes = require('./routes/menu-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
-//const menuRoutes = require('./routes/menu');
-//const checkoutRoutes = require('./routes/checkout');
-//const orderRoutes = require('./routes/order');
+// const menuRoutes = require('./routes/menu');
+// const checkoutRoutes = require('./routes/checkout');
+// const orderRoutes = require('./routes/order');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
-//app.use('./api/menu', menuApiRoutes);
+// app.use('./api/menu', menuApiRoutes);
 app.use('/users', usersRoutes);
-//app.use('./menu', menuRoutes);
-//app.use('./checkout', checkoutRoutes);
-//app.use('./order', orderRoutes);
+// app.use('./menu', menuRoutes);
+// app.use('./checkout', checkoutRoutes);
+// app.use('./order', orderRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
