@@ -6,18 +6,20 @@
  */
 
 const express = require('express');
-const router  = express.Router();
+const menuRoutes  = express.Router();
+const db = require('../db/connection');
+// const foodItemQueries = require('../db/queries/foodItem');
 
-router.get('/', (req, res) => {
+menuRoutes.get('/', (req, res) => {
   res.render('menu');
 
 });
 
-router.post('/', (req, res) => {
-console.log({data: req.body});
+// menuRoutes.post('/', (req, res) => {
+// console.log({data: req.body});
 
-res.render('checkout', {data: req.body});
+// res.render('checkout', {data: req.body});
 
-});
+// });
 
-module.exports = router;
+module.exports = menuRoutes;
