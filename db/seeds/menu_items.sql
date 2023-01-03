@@ -12,13 +12,13 @@
  /* sides
 */
 
-(9,'BBQ Wings', 15, 12 wings, 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/S_BONEIN.jpg'),
-(10,'Hot Wings', 15, 12 wings, 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/S_SCCHB.jpg'),
-(11,'LightHouse Cheesy Bread', 9, 12 pieces, 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_CHEBRD.jpg'),
+(9,'BBQ Wings', 15, '12 wings', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/S_BONEIN.jpg'),
+(10,'Hot Wings', 15, '12 wings', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/S_SCCHB.jpg'),
+(11,'LightHouse Cheesy Bread', 9, '12 pieces', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_CHEBRD.jpg'),
 
 /* drinks
 */
 
-(12,'Coca Cola', 4, 591ml Bottle, 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_COKE.jpg'),
-(13,'Sprite', 4, 591ml Bottle, 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_SPRITE.jpg'),
-(14,'Water', 2, 500ml Bottle 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_WATER.jpg')
+(12,'Coca Cola', 4, '591ml Bottle', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_COKE.jpg'),
+(13,'Sprite', 4, '591ml Bottle', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_SPRITE.jpg'),
+(14,'Water', 2, '500ml Bottle', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_WATER.jpg')
