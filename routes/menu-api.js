@@ -12,7 +12,7 @@ const foodItemQueries = require('../db/queries/foodItem');
 router.get('/', (req, res) => {
   foodItemQueries.getFoodItem()
     .then(foodItem => {
-      
+
       res.json({ foodItem });
     })
     .catch(err => {
