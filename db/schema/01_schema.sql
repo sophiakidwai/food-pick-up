@@ -22,7 +22,7 @@ CREATE TABLE menu_items (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
   price INTEGER NOT NULL,
-  description TEXT,
+  description VARCHAR(255),
   thumbnail_photo_url VARCHAR(255) NOT NULL
 
 );
