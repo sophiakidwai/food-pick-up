@@ -6,8 +6,6 @@ DROP TABLE IF EXISTS orders CASCADE;
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL,
-  password VARCHAR(255) NOT NULL,
   phone VARCHAR(255) NOT NULL,
   admin BOOLEAN DEFAULT FALSE
 );
@@ -18,7 +16,7 @@ CREATE TABLE menu_items (
   price INTEGER NOT NULL,
   ingredients TEXT,
   thumbnail_photo_url VARCHAR(255) NOT NULL,
-  inventory BOOLEAN NOT NULL DEFAULT TRUE,
+  
 );
 
 CREATE TABLE ordered_items (
