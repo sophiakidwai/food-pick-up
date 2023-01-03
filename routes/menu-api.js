@@ -32,10 +32,17 @@ newOrder(is_empty, (err, order)) => {
 
   router.get('/', (req, res) => {
   foodItemQueries.getFoodItem()
+<<<<<<< HEAD
   .then(foodItem => {
       
     res.json({ foodItem });
   })
+=======
+    .then(foodItem => {
+
+      res.json({ foodItem });
+    })
+>>>>>>> 8d60b0ac3ec90d3c9d1cab5df1a085b82dd7e974
     .catch(err => {
      res
       .status(500)
