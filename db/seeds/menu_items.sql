@@ -8,3 +8,17 @@
  (6,'Pepperoni', 13, 'Pepperoni, mozzarella', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/S_PIZPX.jpg'),
  (7,'Cheese', 12, 'Mozarella cheese', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/S_PIZSIX.jpg'),
  (8,'Spinach and Feta Pizza', 13, 'Creamy Alfredo sauce, fresh baby spinach, fresh onions, feta, Parmesan-Asiago, provolone and cheese made with 100% real mozzarella', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/S_PIZSF.jpg')
+
+ /* sides
+*/
+
+(8,'BBQ Wings', 15, 12 wings, 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/S_BONEIN.jpg'),
+(9,'Hot Wings', 15, 12 wings, 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/S_SCCHB.jpg'),
+(10,'LightHouse Cheesy Bread', 9, 12 pieces, 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_CHEBRD.jpg'),
+
+/* drinks
+*/
+
+(11,'Coca Cola', 4, 591ml Bottle, 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_COKE.jpg'),
+(12,'Sprite', 4, 591ml Bottle, 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_SPRITE.jpg'),
+(13,'Water', 2, 500ml Bottle 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_WATER.jpg')
