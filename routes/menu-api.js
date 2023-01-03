@@ -23,7 +23,7 @@ const foodItemQueries = require('../db/queries/foodItem');
   //Delete items from cart
  router.post('/deleteItems', (req, res)) => {
 newOrder(is_empty, (err, order)) => {
-    is_empty = false;  
+    is_empty = false;
       if (err) {
      return res.render('error', { err});
  }
@@ -32,17 +32,10 @@ newOrder(is_empty, (err, order)) => {
 
   router.get('/', (req, res) => {
   foodItemQueries.getFoodItem()
-<<<<<<< HEAD
-  .then(foodItem => {
-      
-    res.json({ foodItem });
-  })
-=======
     .then(foodItem => {
 
       res.json({ foodItem });
     })
->>>>>>> 8d60b0ac3ec90d3c9d1cab5df1a085b82dd7e974
     .catch(err => {
      res
       .status(500)
