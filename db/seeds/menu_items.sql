@@ -7,7 +7,7 @@
  (5,'BBQ chicken', 17, 'BBQ sauce, seasoned grilled chicken breast, red onion, green peppers, smoked aged cheddar and pizza mozzarella', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/S_PIZBQ.jpg'),
  (6,'Pepperoni', 13, 'Pepperoni, mozzarella', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/S_PIZPX.jpg'),
  (7,'Cheese', 12, 'Mozarella cheese', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/S_PIZSIX.jpg'),
- (8,'Spinach and Feta Pizza', 13, 'Creamy Alfredo sauce, fresh baby spinach, fresh onions, feta, Parmesan-Asiago, provolone and cheese made with 100% real mozzarella', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/S_PIZSF.jpg')
+ (8,'Spinach and Feta Pizza', 13, 'Creamy Alfredo sauce, fresh baby spinach, fresh onions, feta, Parmesan-Asiago, provolone and cheese made with 100% real mozzarella', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/S_PIZSF.jpg'),
 
  /* sides
 */
