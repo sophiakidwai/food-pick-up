@@ -7,4 +7,3 @@ JOIN ordered_items ON order_id = orders.id
 JOIN menu_items ON menu_id = menu_items.id;
 
 
-
