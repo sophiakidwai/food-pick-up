@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Checkout</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <!-- <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" /> -->
+  <link rel="stylesheet" href="/styles/checkout.css" />
+  <link rel="stylesheet" href="/styles/nav.css" />
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/checkout.js"></script>
+
+
+</head>
+
+<body>
+  <%- include("partials/_header") %>
+  <div class='checkout_page'>
+    <div>
+      <h1 id="checkout_title">Checkout</h1>
+    </div>
+
+    <table id="checkout">
+      <div>
+        <% let subtotal=0; %>
+          <% for (item of pendingItemsWithQuantity){ %>
+            <div id="item_name">
+              <%= item.name %>
+            </div>
+            <div>
+              Price: $<%= item.price %>
+            </div>
+            <div>
+              Ingredients: <%= item.description %>
+            </div>
+            <div>
+              Quantity: <%= item.quantity %>
+            </div>
+            <label>
+              <% subtotal=subtotal + item.price*item.quantity; %>
+            </label>
+            <% } %>
+              <div>Total: $<%= subtotal %>
+              </div>
+      </div>
+    </table>
+
+    <form method="POST" action="/checkout">
+      <div>
+        <table id="order"></table>
+      </div>
+      <div class="successMessage1"></div>
+      <div class="successMessage2"></div>
+    </form>
+  </div>
+  
+  <div class="buttonContainer">
+    <div>
+      <input type="button" id="submit_button" value="Submit order" />
+    </div>
+    <div>
+      <input id="clear_cart_button" type="button" onclick="location.href='/menu';" value="Clear Cart" />
+    </div>
+  </div>
+    
+</body>
+
+</html>

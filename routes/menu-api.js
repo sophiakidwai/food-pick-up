@@ -6,41 +6,43 @@
  */
 
 const express = require('express');
-const router  = express.Router();
+const { deleteItem } = require('../db/queries');
+const router = express.Router();
 const foodItemQueries = require('../db/queries/foodItem');
 
 
-// Adds items to cart//
- router.post('/checkoutItems', (req, res)) => {
-// addItemData has the data from the submitted add item form
- const addItemData = {
-   item_id: req.body.item_id,
- quantity: req.body.quant,
-  special_req: req.body.specialRequests,
- }
- };
+// // Adds items to cart//
+// router.post('/checkoutItems', (req, res) => {
+//   // addItemData has the data from the submitted add item form
+//   const addItemData = {
+//     item_id: req.body.item_id,
+//     quantity: req.body.quant,
+//     special_req: req.body.specialRequests,
+//   };
+// });
 
-  //Delete items from cart
- router.post('/deleteItems', (req, res)) => {
-newOrder(is_empty, (err, order)) => {
-    is_empty = false;
-      if (err) {
-     return res.render('error', { err});
- }
+// //Delete items from cart
+// router.post('/deleteItems', (req, res) => {
+//   deleteItem(is_empty, (err, order) => {
+//     is_empty = false;
+//     if (err) {
+//       return res.render('error', { err });
+//     }
 
-  }
+//   });
+// });
 
-  router.get('/', (req, res) => {
+router.get('/', (req, res) => {
   foodItemQueries.getFoodItem()
     .then(foodItem => {
 
       res.json({ foodItem });
     })
     .catch(err => {
-     res
-      .status(500)
-      .json({ error: err.message });
-  });
-  });
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
 
 module.exports = router;

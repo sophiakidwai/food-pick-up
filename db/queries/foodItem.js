@@ -6,5 +6,12 @@ const getFoodItem = () => {
       return data.rows;
     });
 };
+const getFoodItemWithId = (ids) => {
+  const formattedIds = `(${ids.toString()})`;
+  return db.query(`SELECT id, name, price, description FROM menu_items WHERE id in ${formattedIds};`)
+    .then(data => {
+      return data.rows;
+    });
+};
 
-module.exports = { getFoodItem };
+module.exports = { getFoodItem, getFoodItemWithId };

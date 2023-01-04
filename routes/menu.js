@@ -8,10 +8,15 @@
 const express = require('express');
 const menuRoutes  = express.Router();
 const db = require('../db/connection');
-// const foodItemQueries = require('../db/queries/foodItem');
+const foodItemQueries = require('../db/queries/foodItem');
 
 menuRoutes.get('/', (req, res) => {
-  res.render('menu');
+  foodItemQueries.getFoodItem()
+    .then(foodItem => {
+
+      res.render( 'menu', {foodItem});
+    })
+  // res.render('menu');
 
 });
 
