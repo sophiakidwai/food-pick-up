@@ -34,6 +34,7 @@ const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const menuRoutes = require('./routes/menu');
 const checkoutRoutes = require('./routes/checkout');
+// const cartRoutes = require('./routes/cart');
 // const orderRoutes = require('./routes/order');
 
 // Mount all resource routes
@@ -45,6 +46,7 @@ app.use('/api/menu', menuApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/menu', menuRoutes);
 app.use('/checkout', checkoutRoutes);
+// app.use('/cart', cartRoutes);
 // app.use('./order', orderRoutes);
 // Note: mount other resources here, using the same pattern above
 
@@ -55,6 +57,10 @@ app.use('/checkout', checkoutRoutes);
 app.get('/', (req, res) => {
   res.render('index');
 });
+
+
+
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

@@ -11,6 +11,10 @@ let totals = { subtotal: 0, tax: 0, total: 0 };
 // checkoutRoutes.get('/', (req, res) => {
 //   res.render('checkout'); //reading info from server or db..comment out
 // });
+//sends to checkout page, shows cart items
+checkoutRoutes.get("/", (req, res) => {
+  res.render("checkout");
+});
 
 checkoutRoutes.post('/', (req, res) => {
   console.log({ data: req.body }); //process 

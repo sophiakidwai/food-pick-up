@@ -2,79 +2,71 @@
 <html lang="en">
 
 <head>
-  <title>Checkout</title>
+  <!-- Meta Information -->
+  <title>Lighthouse Pizza</title>
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;700&display=swap" rel="stylesheet">
+
+
+  <!-- App CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
-  <!-- <link rel="stylesheet" href="/styles/main.css" />
-  <link rel="stylesheet" href="/styles/layout.css" /> -->
-  <link rel="stylesheet" href="/styles/checkout.css" />
-  <link rel="stylesheet" href="/styles/nav.css" />
-
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/landingPage.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/cart.css" type="text/css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/checkout.js"></script>
+  <script defer src="/scripts/app.js"></script>
+  <script defer src="/scripts/helperFunctions.js" async></script>
+
 
 
 </head>
-
-<body>
-  <%- include("partials/_header") %>
-  <div class='checkout_page'>
-    <div>
-      <h1 id="checkout_title">Checkout</h1>
-    </div>
-
-    <table id="checkout">
-      <div>
-        <% let subtotal=0; %>
-          <% for (item of pendingItemsWithQuantity){ %>
-            <div id="item_name">
-              <%= item.name %>
-            </div>
-            <div>
-              Price: $<%= item.price %>
-            </div>
-            <div>
-              Ingredients: <%= item.description %>
-            </div>
-            <div>
-              Quantity: <%= item.quantity %>
-            </div>
-            <label>
-              <% subtotal=subtotal + item.price*item.quantity; %>
-            </label>
-            <% } %>
-              <div>Total: $<%= subtotal %>
-              </div>
-      </div>
-    </table>
-
-    <form method="POST" action="/checkout">
-      <div>
-        <table id="order"></table>
-      </div>
-      <div class="successMessage1"></div>
-      <div class="successMessage2"></div>
-    </form>
+<!-- Cart -->
+<section class="cart-container">
+  <a name="cart-section"></a>
+  <h2 class="cart-header">CART</h2>
+  <div class="cart-row">
+      <span class="cart-item cart-header cart-column">ITEM</span>
+      <span class="cart-price cart-header cart-column">PRICE</span>
+      <span class="cart-quantity cart-header cart-column">QUANTITY</span>
   </div>
-  
-  <div class="buttonContainer">
-    <div>
-      <input type="button" id="submit_button" value="Submit order" />
+  <div id="cart">
+    <div class="cart-row">
+      <div class="cart-item cart-column">
+      <span class="item-image"> Image </span>
+      <span class="item-name"> Pizza </span>
     </div>
-    <div>
-      <input id="clear_cart_button" type="button" onclick="location.href='/menu';" value="Clear Cart" />
+      <span class="cart-price cart-column"> $30 </span>
+      <div class="cart-quantity cart-column">
+      <input class="cart-quantity-input" type="number" value="1">
+      <button class="btn btn-danger deleteButton" type="button">Delete</button>
+      </div>
     </div>
+
   </div>
-    
+
+  <div class="cart-total">
+      <strong class="cart-total-title">Total:</strong>
+      <span class="cart-total-price">$0</span>
+  </div>
+  <button class="btn btn-primary btn-purchase" type="button">Checkout</button>
+</section>
+</div>
+</div>
 </body>
 
 </html>
