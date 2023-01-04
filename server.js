@@ -1,6 +1,6 @@
 // load .env data into process.env
 require('dotenv').config();
-
+const foodItemQueries = require('./db/queries/foodItem');
 // Web server config
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
@@ -55,7 +55,19 @@ app.use('/checkout', checkoutRoutes);
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
-  res.render('index');
+  console.log("checking")
+  foodItemQueries.getFoodItem()
+    .then(foodItem => {
+      res.render('index', {data:foodItem});
+      console.log(foodItem)
+      // res.json({ foodItem });
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+
 });
 
 
