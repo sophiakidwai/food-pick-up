@@ -27,7 +27,7 @@ const createCartItem = function(itemObj) {
 </div>
   <span class="cart-price cart-column"> $30 </span>
   <div class="cart-quantity cart-column">
-  <input class="cart-quantity-input" type="number" value="1">
+  <input id="test" class="cart-quantity-input" type="number" value="1">
   <button class="btn btn-danger deleteButton" type="button">Delete</button>
   </div>
 </div>`
@@ -45,6 +45,22 @@ for (const lineItem of lineItems) {
   const  lineItemElement = createCartItem (lineItem);
   $("#cart").prepend( lineItemElement)
 }
+$("#test").on("input", function() {
+  console.log("test function");
+        //Tracking character count input from user using keyup
+        const quantity = $(this).val();
+
+        let quantityField = $('#test');
+console.log(quantity);
+        //Updating counter elem on DOM to reflect current changes in remaining characters
+        //quantityField.html(remainingChars);
+
+        if (quantity < 0) {
+          quantityField.css('color', '#8f0001');
+        } else {
+          quantityField.css('color', '#000000');
+        }
+      });
 }
 
 
@@ -64,18 +80,19 @@ $(document).ready(function() {
 
   loadCart();
 
-// // new tweet 
+
+// // new tweet
 $(`.deleteButton`).click(function(event) { // should be in a function
    event.preventDefault();
     console.log('removingCartItem');
     //get info on what lineitem was clicked from the event, make sure to console.log
-    //get cart dataa from local storage 
+    //get cart dataa from local storage
     // update cart data with new quanity, removes item
     //set local storage with new cart data
     localStorage.setItem('myCart', JSON.stringify([{name: 'pizza', quantity: 4}]));
     loadCart();
   });
-  
+
 //   // nav arrow hide/show new tweet section
 //   $('.next').click(function(event) {
 //     event.preventDefault();
@@ -90,7 +107,7 @@ $(`.deleteButton`).click(function(event) { // should be in a function
 //     }
 
 //   });
-  
+
 //   // scroll button at the botton will appear when window scrolls down
 //   $(window).scroll(function() {
 //     if (window.pageYOffset > 100) {
@@ -114,7 +131,7 @@ $(`.deleteButton`).click(function(event) { // should be in a function
 
 
 //   // AJAX handling of form submission
-// when checkout button is clicked 
+// when checkout button is clicked
   $(`.tweetForm`).submit(function(event) {
 
     //prevents page from reloading
@@ -124,10 +141,10 @@ $(`.deleteButton`).click(function(event) { // should be in a function
     $.post('/checkout', cart, () => {
      // handles successful checkout
     });
-    
+
   });
-  
-  
+
+
 //   // Compose button on navigation bar
 //   $('.right-nav').click(function(event) {
 //     event.preventDefault();
@@ -136,5 +153,5 @@ $(`.deleteButton`).click(function(event) { // should be in a function
 
 //   loadTweets();
 });
-  
+
 
