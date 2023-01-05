@@ -1,5 +1,5 @@
 const express = require('express');
-const checkoutRoutes = express.Router(); //books name 
+const checkoutRoutes = express.Router(); //books name
 const db = require('../db/connection');
 const { checkoutItems, addItem, deleteItem } = require('../db/queries'); //import items
 // const foodItemQueries = require('../db/queries/foodItem');
@@ -17,7 +17,7 @@ checkoutRoutes.get("/", (req, res) => {
 });
 
 checkoutRoutes.post('/', (req, res) => {
-  console.log({ data: req.body }); //process 
+  console.log({ data: req.body }); //process
 
 });
 //Adds items to cart//
@@ -28,7 +28,7 @@ checkoutRoutes.post('/checkoutItems', (req, res) => {
     quantity: req.body.quant,
   };
   //Creates a new order if this is the first item in the cart. If you're in an existing order, then it just adds items to the order
-  // newOrder(is_empty, (err, order) => { // get rid 
+  // newOrder(is_empty, (err, order) => { // get rid
   //   is_empty = false;
   //   if (err) {
   //     return res.render('error', { err });
@@ -41,14 +41,15 @@ checkoutRoutes.post('/checkoutItems', (req, res) => {
   // });
 });
 
+
 //Delete items from cart
 //
 checkoutRoutes.post('/deleteItems', (req, res) => {
-  // 1.if my cart is empty 
-  // then i want message displayed 
-  // 2. if order has been submitted 
+  // 1.if my cart is empty
+  // then i want message displayed
+  // 2. if order has been submitted
   // then another message generated to advise user of status 'submitted' , 'status'
-  // 3.if 1 and 2 scenarios are done , cart can be reset or will be 
+  // 3.if 1 and 2 scenarios are done , cart can be reset or will be
   // using order_id I can delete the cart once scenarios are fullfilled
 
   deleteItem(is_empty, (err, order) => {
@@ -95,7 +96,7 @@ let checkoutUpdater = function(cb) {
 
       cb({ itemsCheckInCheckout: itemsInCheckout, totals: totals });
     });
-  
+
 };
 
 

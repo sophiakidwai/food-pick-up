@@ -80,6 +80,32 @@ $(document).ready(function() {
 
   loadCart();
 
+  $('#cart').click(function(event) {
+    event.preventDefault();
+    $('.foodList').focus();
+  });
+
+  $.ajax({
+    url: "/",
+    method: "POST",
+    data: menu_items,
+  }).then(function() {
+
+    loadCart();
+  });
+
+
+
+  const loadCart = function() {
+  $.ajax({
+    url: "/checkout",
+    method: "GET",
+  }).then(renderCart);
+
+
+  };
+  loadCart();
+
 
 // // new tweet
 $(`.deleteButton`).click(function(event) { // should be in a function
@@ -153,5 +179,6 @@ $(`.deleteButton`).click(function(event) { // should be in a function
 
 //   loadTweets();
 });
+
 
 
