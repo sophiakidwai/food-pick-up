@@ -23,7 +23,7 @@ checkoutRoutes.post('/', (req, res) => {
 
 });
 //Adds items to cart//
-checkoutRoutes.post('/checkoutItems', (req, res) => {
+checkoutRoutes.post('/add', (req, res) => {
   //addItemData has the data from the submitted add item form
   const addItemData = {
     item_id: req.body.item_id,
