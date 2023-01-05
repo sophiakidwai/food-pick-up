@@ -1,3 +1,4 @@
+const { query } = require('express');
 const express = require('express');
 const checkoutRoutes = express.Router(); //books name
 const db = require('../db/connection');
@@ -13,8 +14,10 @@ let totals = { subtotal: 0, tax: 0, total: 0 };
 // });
 //sends to checkout page, shows cart items
 checkoutRoutes.get("/", (req, res) => {
+  // query.cartItems return cart items as template vars in render
   res.render("checkout");
 });
+
 
 checkoutRoutes.post('/', (req, res) => {
   console.log({ data: req.body }); //process

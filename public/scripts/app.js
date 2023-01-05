@@ -36,7 +36,7 @@ const createCartItem = function(itemObj) {
 }
 //render to dom line items created in createcartItem
 const renderCart = function(lineItems) { //getting data from cart from local storage, is looping and adding to dom via prepend
-
+console.log(lineItems);
 // loops through tweets
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
@@ -64,52 +64,53 @@ console.log(quantity);
 }
 
 
-const loadCart = function() {
-  // gets the ITEM db from /tweets route and calls renderTweets to post on to page
-  const cart = JSON.parse(localStorage.getItem('myCart'));
-  console.log("test", cart[0]);
-  renderCart(cart)
-};
-console.log("testingload");
-localStorage.setItem('myCart', JSON.stringify([{name: 'pizza', quantity: 4}, {name: 'pizza', quantity: 4}]));
+// const loadCart = function() {
+//   // gets the ITEM db from /tweets route and calls renderTweets to post on to page
+//   const cart = JSON.parse(localStorage.getItem('myCart'));
+//   console.log("test", cart[0]);
+//   renderCart(cart)
+// };
+// console.log("testingload");
+// localStorage.setItem('myCart', JSON.stringify([{name: 'pizza', quantity: 4}, {name: 'pizza', quantity: 4}]));
 
 
 $(document).ready(function() {
 
   // Load tweets on page load
 
-  loadCart();
-
+  
   $('#cart').click(function(event) {
     event.preventDefault();
     $('.foodList').focus();
   });
-
+  
+  
+  
+  
+  const loadCart = function() {
+    console.log('testing2');
+    $.ajax({
+      url: "/checkout",
+      method: "GET",
+    }).then(renderCart);
+    
+    
+    
+  };
+  loadCart();
   $.ajax({
     url: "/",
     method: "POST",
     data: menu_items,
   }).then(function() {
-
+    
     loadCart();
   });
-
-
-
-  const loadCart = function() {
-  $.ajax({
-    url: "/checkout",
-    method: "GET",
-  }).then(renderCart);
-
-
-  };
-  loadCart();
-
-
-// // new tweet
-$(`.deleteButton`).click(function(event) { // should be in a function
-   event.preventDefault();
+  
+  
+  // // new tweet
+  $(`.deleteButton`).click(function(event) { // should be in a function
+    event.preventDefault();
     console.log('removingCartItem');
     //get info on what lineitem was clicked from the event, make sure to console.log
     //get cart dataa from local storage
