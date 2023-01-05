@@ -11,13 +11,28 @@ const db = require('../db/connection');
 const foodItemQueries = require('../db/queries/foodItem');
 
 menuRoutes.get('/', (req, res) => {
-  foodItemQueries.getFoodItem()
+  console.log("checking")
+  foodItemQueries.getFoodItems()
     .then(foodItem => {
-
-      res.render( 'menu', {foodItem});
+      res.render('menu', {data:foodItem});
+      console.log(foodItem)
+      // res.json({ foodItem });
     })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
   // res.render('menu');
 
+});
+
+menuRoutes.get('/:itemId', (req, res) =>{
+foodItemQueries.getFoodItemWithId(req.params.itemId)
+    .then(foodItem => {
+      res.render('item', {data:foodItem});
+      // res.json(foodItem)
+    })
 });
 
 // menuRoutes.post('/', (req, res) => {

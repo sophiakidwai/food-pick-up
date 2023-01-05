@@ -40,32 +40,14 @@
     <div class="content-area">
       <div class="content">
         <h2>Made fresh to order!</h2>
-        <p>Welcome to Lighthouse Pizza. Traditional itlaian flavours and techniques are combined with fresh local
+        <p>Welcome to Lighthouse Pizza. Traditional Italian flavours and techniques are combined with fresh local
           ingredients to create a unique dining experience. Each pizza is made to order using hand tossed dough, quality
           ingredients and cooked in our unique wood-fire oven. Our sides are made fresh daily. </p>
       </div>
 
 
       <h2><a id="foodSection">Food & Drinks</a></h2>
-      <% for(var i=0; i < data.length; i++) { %>
-        <div class="column foodList">
-          <div class="column foodPicture"> <span class="pictures"><img class="foodPic"
-                src="<%= data[i].thumbnail_photo_url %>"></span>
-            <span class="namePrice">
-              <%= data[i].name%> $<%= data[i].price%>
-            </span>
-            <span class="foodDescription">
-              <div>
-                <%= data[i].description%>
-            </span>
-            <div>
-              <button class="btn btn-primary addCart">Add to cart</button>
-            </div>
-          </div>
-        </div>
-    </div>
-    <% } %>
-
+      <a href="/menu">Visit the menu!</a>
 
       </div>
       </div>
