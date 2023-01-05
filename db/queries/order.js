@@ -28,6 +28,8 @@ const completeOrder =() => {
 };
 module.exports = { addItem, deleteItem, completeOrder };
 
+console.log("hello");
+
 // CREATE TABLE orders (
 //   id SERIAL PRIMARY KEY NOT NULL,
 //   order_start TIMESTAMP DEFAULT NOW(),
