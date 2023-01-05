@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="/styles/main.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/landingPage.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/cart.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/checkout.css" type="text/css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -35,7 +35,11 @@
 
 
 </head>
+
+<body>
+  <%- include('./partials/_header') %>
 <!-- Cart -->
+<div class="content-area">
 <section class="cart-container">
   <a name="cart-section"></a>
   <h2 class="cart-header">CART</h2>
@@ -65,6 +69,7 @@
   </div>
   <button class="btn btn-primary btn-purchase" type="button">Checkout</button>
 </section>
+</div>
 </div>
 </div>
 </body>

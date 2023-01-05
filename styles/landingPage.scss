@@ -62,12 +62,13 @@ nav a {
 	position: relative;
 	top: 450px;
 	background: #ebebeb;
-	height: 1500px;
+	height: 2500px;
 }
 .content-area h2 {
 	font-family: poppins;
 	letter-spacing: 2px;
 	padding-top: 30px;
+  padding-bottom: 10px;
 	font-size: 40px;
 	margin: 0;
 }
@@ -83,9 +84,41 @@ nav a {
   padding: 5px;
 }
 
-/* Clearfix (clear floats) */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
+.namePrice{
+  font-family: poppins;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
 }
+
+.foodDescription {
+  font-family: poppins;
+  text-align: center;
+  font-style: italic;
+}
+
+//add cart button
+.addCart {
+  display: center;
+  color: white;
+  background-color: #262626;
+  border: none;
+  border-radius: 0.3em;
+  font-family: poppins;
+  font-size: 1em;
+}
+
+.addCart:hover {
+  background-color: #555353;
+}
+
+.foodPic {
+  border-radius: 4px;
+  width: 200px;
+}
+
+.foodList {
+  align-items: center;
+  padding-left: 130px;
+}
+
