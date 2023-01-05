@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta Information -->
+  <title>Lighthouse Pizza</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;700&display=swap" rel="stylesheet">
+
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/landingPage.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/checkout.css" type="text/css" />
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+  <script defer src="/scripts/helperFunctions.js" async></script>
+
+</head>
+
+<body>
+  <%- include('./partials/_header') %>
+
+    <div class="content-area">
+      <div class="content">
+        <h2>Made fresh to order!</h2>
+        <p>Welcome to Lighthouse Pizza. Traditional itlaian flavours and techniques are combined with fresh local
+          ingredients to create a unique dining experience. Each pizza is made to order using hand tossed dough, quality
+          ingredients and cooked in our unique wood-fire oven. Our sides are made fresh daily. </p>
+      </div>
+
+
+      <h2><a id="foodSection">Food & Drinks</a></h2>
+      <% for(var i=0; i < data.length; i++) { %>
+        <div class="column foodList">
+          <div class="column foodPicture"> <span class="pictures"><img class="foodPic"
+                src="<%= data[i].thumbnail_photo_url %>"></span>
+            <span class="namePrice">
+              <%= data[i].name%> $<%= data[i].price%>
+            </span>
+            <span class="foodDescription">
+              <div>
+                <%= data[i].description%>
+            </span>
+            <div>
+              <button class="btn btn-primary addCart">Add to cart</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <% } %>
+
+
+      </div>
+      </div>
+</body>
+
+</html>
