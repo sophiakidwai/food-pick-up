@@ -21,4 +21,57 @@
 
 (12,'Coca Cola', 4, '591ml Bottle', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_COKE.jpg'),
 (13,'Sprite', 4, '591ml Bottle', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_SPRITE.jpg'),
-(14,'Water', 2, '500ml Bottle', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_WATER.jpg')
+(14,'Water', 2, '500ml Bottle', 'https://cache.dominos.com/nolo/ca/en/6_94_15/assets/build/market/CA/_en/images/img/products/larges/F_WATER.jpg');
+
+
+  INSERT INTO users
+(id, name, phone)
+VALUES
+(1,'Hungry Hippo',  '1112223333'),
+(2,'Peckish Penguin', '2222223333'),
+(3,'Elegant Elephant',  '3332223333'),
+(4,'Krazy Kangaroo',  '4442223333'),
+(5,'Frog Prince', '5552223333'),
+(6, 'admin1',  '6662223333');
+
+INSERT INTO orders
+(id, order_start, order_complete, order_status, user_id)
+VALUES
+(1, '2022-06-22 19:10:25-07', '2016-06-22 19:30:25-07', TRUE, 1),
+(2, '2022-07-13 07:01:01-07', '2022-07-13 13:10:10-07', TRUE, 2),
+(3, '2022-07-13 14:01:01-07', '2022-07-13 14:50:01-07', TRUE, 1),
+(4, '2022-07-14 16:15:01-07', '2022-07-13 16:35:01-07', TRUE, 3);
+
+INSERT INTO ordered_items
+(id, order_id, menu_id, quantity)
+VALUES
+(1, 1, 1, 1),
+(2, 1, 4, 1),
+(3, 1, 5, 1),
+(4, 2, 2, 3),
+(5, 2, 3, 3),
+(6, 2, 4, 3),
+(7, 2, 5, 3),
+(8, 3, 1, 3),
+(9, 3, 3, 1),
+(10, 3, 4, 1),
+(11, 4, 5, 1),
+(12, 4, 2, 1),
+(13, 4, 3, 2);
+
+INSERT INTO cart
+(id, user_id, menu_id, total_quantity)
+VALUES
+(1, 1, 1, 1),
+(2, 1, 4, 1),
+(3, 1, 5, 1),
+(4, 2, 2, 3),
+(5, 2, 3, 3),
+(6, 2, 4, 3),
+(7, 2, 5, 3),
+(8, 3, 1, 3),
+(9, 3, 3, 1),
+(10, 3, 4, 1),
+(11, 4, 5, 1),
+(12, 4, 2, 1),
+(13, 4, 3, 2);

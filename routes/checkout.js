@@ -13,7 +13,9 @@ let totals = { subtotal: 0, tax: 0, total: 0 };
 // });
 //sends to checkout page, shows cart items
 checkoutRoutes.get("/", (req, res) => {
+  // query.cartItems return cart items as template vars in render
   res.render("checkout");
+
 });
 
 checkoutRoutes.post('/', (req, res) => {
