@@ -75,6 +75,7 @@ const createCartItem = function(itemObj, arrLength) {
   return $tweet;
 
 }
+
 //render to dom line items created in createcartItem
 const renderCart = function(lineItems) { //getting data from cart from local storage, is looping and adding to dom via prepend
 console.log("test", lineItems)
@@ -133,17 +134,19 @@ $(document).ready(function() {
   loadCart();
 
 
-// // new tweet
-$(`.deleteButton`).click(function(event) { // should be in a function
-   event.preventDefault();
-    console.log('removingCartItem');
-    //get info on what lineitem was clicked from the event, make sure to console.log
-    //get cart dataa from local storage
-    // update cart data with new quanity, removes item
-    //set local storage with new cart data
-    localStorage.setItem('myCart', JSON.stringify([{name: 'pizza', quantity: 4}]));
-    loadCart();
-  });
+  $(`.deleteButton`).click(function(event) { // should be in a function
+    event.preventDefault();
+     console.log('removingCartItem');
+     //get info on what lineitem was clicked from the event, make sure to console.log
+     //get cart dataa from local storage
+     // update cart data with new quanity, removes item
+     //set local storage with new cart data
+     localStorage.setItem('myCart', JSON.stringify([{name: 'pizza', quantity: 4}]));
+     loadCart();
+   });
+
+
+
 
 //   // AJAX handling of form submission
 // when checkout button is clicked
