@@ -77,6 +77,21 @@
   margin-bottom: 10px;
 }
 
+.btn-purchase {
+  display: center;
+  color: white;
+  background-color: #262626;
+  border: none;
+  border-radius: 0.3em;
+  font-family: poppins;
+  font-size: 1.5em;
+  margin-top: 1em;
+}
+
+.btn-purchase:hover {
+  background-color: #555353;
+}
+
 .cart-total-title {
   font-weight: bold;
   font-size: 1.5em;
@@ -88,18 +103,4 @@
 .cart-total-price {
   font-family: poppins;
   font-size: 1.1em;
-}
-
-.btn-purchase {
-  display: center;
-  color: white;
-  background-color: #262626;
-  border: none;
-  border-radius: 0.3em;
-  font-family: poppins;
-  font-size: 1.5em;
-}
-
-.btn-purchase:hover {
-  background-color: #555353;
 }

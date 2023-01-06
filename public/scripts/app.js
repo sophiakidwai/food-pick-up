@@ -4,7 +4,24 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// const { render } = require("sass");
+// "use strict";
+
+// // Install Dependencies
+// // npm install twilio
+// // npm i moment
+
+// const moment = require("moment");
+// const express = require("express");
+// const router = express.Router();
+
+// //Environment Variables
+// const client = require("twilio")(
+//   process.env.TWILIO_ACCOUNT_SID,
+//   process.env.TWILIO_AUTH_TOKEN
+// );
+
+
+
 let total = 0;
 
 const escape = function (str) {
@@ -40,7 +57,7 @@ const createCartItem = function(itemObj, arrLength) {
   if (itemObj == arrLength - 1) {
     stringTotal = `<div class="cart-total">
   <strong class="cart-total-title">Total:</strong>
-  <span class="cart-total-price">${total}</span>
+  <span class="cart-total-price">${total / 2}.00</span>
   </div>`
   }
   const $tweet =  `<div class="cart-row">
@@ -48,7 +65,7 @@ const createCartItem = function(itemObj, arrLength) {
 
   <span class="item-name"> ${cartItem[objkeys[itemObj]].name} </span>
 </div>
-  <span class="cart-price cart-column"> ${cartItem[objkeys[itemObj]].price}</span>
+  <span class="cart-price cart-column"> ${cartItem[objkeys[itemObj]].price}.00</span>
   <div class="cart-quantity cart-column">
   <input id="test" class="cart-quantity-input" type="number" value="1">
   <button class="btn btn-danger deleteButton" type="button">Delete</button>
@@ -142,6 +159,22 @@ $(`.deleteButton`).click(function(event) { // should be in a function
 
   });
 
+
+
+// $('.btn-purchase').on("click", function (event) {
+//   client.messages
+//   .create({
+//     body: 'Hello from Node',
+//     to: '+14166297784', // Text this number 9Demp phone)
+//     from: '+19789532028', // From a valid Twilio number
+//   })
+//   .then((message) => console.log(message.sid));
+// })
+
+
+// $('.btn-purchase').on("click", function (event) {
+//   alert("Thank you for your order");
+// })
 
 //   // Compose button on navigation bar
 //   $('.right-nav').click(function(event) {
