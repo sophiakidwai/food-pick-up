@@ -1,32 +1,32 @@
-const db = require('../connection');
+// const db = require('../connection');
 
-const findOpenOrderId =() => {
-//find the most recent ID to be able to add ordered items to it
+// const findOpenOrderId =() => {
+// //find the most recent ID to be able to add ordered items to it
 
-}
+// }
 
 
-const addItemToCheckout =(menuId) => {
-// ask findOpenOrderId for the order id
-// add new menu item to order - hardcode quantity to 1
+// const addItemToCheckout =(menuId) => {
+// // ask findOpenOrderId for the order id
+// // add new menu item to order - hardcode quantity to 1
 
-};
-const deleteItemFromCheckout =() => {
-// ask findOpenOrderId for the order id
-// remove new menu item to order
-};
+// };
+// const deleteItemFromCheckout =() => {
+// // ask findOpenOrderId for the order id
+// // remove new menu item to order
+// };
 
-const fetchCurrentCheckout =() => {
-// fetch openOrderId
-//fetch all ordered items matching the order id
-};
+// const fetchCurrentCheckout =() => {
+// // fetch openOrderId
+// //fetch all ordered items matching the order id
+// };
 
-const completeOrder =() => {
-// use findOpenOrderId to find most recent open order
-//change order status from false to true, add order complete time stamp
-// create a new empty order hardcode user id to 1
-};
-module.exports = { addItem, deleteItem, completeOrder };
+// const completeOrder =() => {
+// // use findOpenOrderId to find most recent open order
+// //change order status from false to true, add order complete time stamp
+// // create a new empty order hardcode user id to 1
+// };
+// module.exports = { addItem, deleteItem, completeOrder };
 
 // CREATE TABLE orders (
 //   id SERIAL PRIMARY KEY NOT NULL,

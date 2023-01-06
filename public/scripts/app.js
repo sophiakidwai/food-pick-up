@@ -12,6 +12,19 @@ const escape = function (str) {
   return div.innerHTML;
 };
 
+const addToCart = function (name, price, quantity) {
+  console.log("test", name, price, quantity);
+  const menu = {name, price, quantity}
+  const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+if (!cartItems) {
+  localStorage.setItem('cartItems', JSON.stringify({[menu.name]: menu}));
+
+}
+localStorage.setItem('cartItems', JSON.stringify({...cartItems, [menu.name]: menu}))
+  // const menuList = JSON.parse(localStorage.getItem('menu'));
+
+}
+
 //takes item info and create line item in cart
 const createCartItem = function(itemObj) {
 // const name = itemObj.user.name;
@@ -19,13 +32,17 @@ const createCartItem = function(itemObj) {
 //   const handle = itemObj.user.handle;
 //   const text = itemObj.content.text;
 //   const date = timeago.format(itemObj.created_at);
-  const name = 'sushi'
+  const name = 'Vegetarian'
+  const cartItem = JSON.parse(localStorage.getItem('cartItems'));
+  console.log("cart item from local storage", cartItem)
+  console.log(Object.keys(cartItem))
+  let objkeys = Object.keys(cartItem)
   const $tweet =  `<div class="cart-row">
   <div class="cart-item cart-column">
-  <span class="item-image"> Image </span>
-  <span class="item-name"> ${name} </span>
+
+  <span class="item-name"> ${cartItem[objkeys[itemObj]].name} </span>
 </div>
-  <span class="cart-price cart-column"> $30 </span>
+  <span class="cart-price cart-column"> ${cartItem[objkeys[itemObj]].price}</span>
   <div class="cart-quantity cart-column">
   <input id="test" class="cart-quantity-input" type="number" value="1">
   <button class="btn btn-danger deleteButton" type="button">Delete</button>
@@ -36,13 +53,13 @@ const createCartItem = function(itemObj) {
 }
 //render to dom line items created in createcartItem
 const renderCart = function(lineItems) { //getting data from cart from local storage, is looping and adding to dom via prepend
-
+console.log("test", lineItems)
 // loops through tweets
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
 $("#cart").html('')
-for (const lineItem of lineItems) {
-  const  lineItemElement = createCartItem (lineItem);
+for (let i=0; i < lineItems.length; i++) {
+  const  lineItemElement = createCartItem(i);
   $("#cart").prepend( lineItemElement)
 }
 $("#test").on("input", function() {

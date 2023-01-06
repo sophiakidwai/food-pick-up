@@ -59,7 +59,7 @@
                 <%= data[i].description%>
             </span>
             <div>
-              <button class="btn btn-primary addCart">Add to cart</button>
+              <button onclick="addToCart('<%= data[i].name%>', '<%= data[i].price%>', '2' )" class="btn btn-primary addCart">Add to cart</button>
             </div>
           </div>
         </div>
