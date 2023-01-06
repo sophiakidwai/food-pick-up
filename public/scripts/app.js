@@ -5,6 +5,7 @@
  */
 
 // const { render } = require("sass");
+let total = 0;
 
 const escape = function (str) {
   let div = document.createElement("div");
@@ -12,6 +13,7 @@ const escape = function (str) {
   return div.innerHTML;
 };
 
+//Add to cart button - working
 const addToCart = function (name, price, quantity) {
   console.log("test", name, price, quantity);
   const menu = {name, price, quantity}
@@ -25,18 +27,22 @@ localStorage.setItem('cartItems', JSON.stringify({...cartItems, [menu.name]: men
 
 }
 
-//takes item info and create line item in cart
-const createCartItem = function(itemObj) {
-// const name = itemObj.user.name;
-//   const avatar = itemObj.user.avatars;
-//   const handle = itemObj.user.handle;
-//   const text = itemObj.content.text;
-//   const date = timeago.format(itemObj.created_at);
+// displays item in cart - working
+const createCartItem = function(itemObj, arrLength) {
+
   const name = 'Vegetarian'
   const cartItem = JSON.parse(localStorage.getItem('cartItems'));
   console.log("cart item from local storage", cartItem)
   console.log(Object.keys(cartItem))
   let objkeys = Object.keys(cartItem)
+  total += parseInt(cartItem[objkeys[itemObj]].price)
+  let stringTotal = ""
+  if (itemObj == arrLength - 1) {
+    stringTotal = `<div class="cart-total">
+  <strong class="cart-total-title">Total:</strong>
+  <span class="cart-total-price">${total}</span>
+  </div>`
+  }
   const $tweet =  `<div class="cart-row">
   <div class="cart-item cart-column">
 
@@ -47,7 +53,8 @@ const createCartItem = function(itemObj) {
   <input id="test" class="cart-quantity-input" type="number" value="1">
   <button class="btn btn-danger deleteButton" type="button">Delete</button>
   </div>
-</div>`
+</div>${stringTotal}`
+
   return $tweet;
 
 }
@@ -58,8 +65,11 @@ console.log("test", lineItems)
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
 $("#cart").html('')
-for (let i=0; i < lineItems.length; i++) {
-  const  lineItemElement = createCartItem(i);
+const cartItem = JSON.parse(localStorage.getItem('cartItems'));
+let objKeys = Object.keys(cartItem)
+for (let i=0; i < objKeys.length; i++) {
+  console.log("check line items", lineItems)
+  const  lineItemElement = createCartItem(i, objKeys.length);
   $("#cart").prepend( lineItemElement)
 }
 $("#test").on("input", function() {
@@ -117,43 +127,6 @@ $(`.deleteButton`).click(function(event) { // should be in a function
     localStorage.setItem('myCart', JSON.stringify([{name: 'pizza', quantity: 4}]));
     loadCart();
   });
-
-//   // nav arrow hide/show new tweet section
-//   $('.next').click(function(event) {
-//     event.preventDefault();
-//     const newTweetSection = $('.new-tweet')
-//     console.log(newTweetSection)
-
-//     if (newTweetSection.is(':visible')){
-//       newTweetSection.slideUp('fast')
-//     } else {
-//       newTweetSection.slideDown('slow')
-//       newTweetSection.find('#tweet-text').focus()
-//     }
-
-//   });
-
-//   // scroll button at the botton will appear when window scrolls down
-//   $(window).scroll(function() {
-//     if (window.pageYOffset > 100) {
-//       $('.scrollUp').addClass('active');
-//     } else {
-//       $('.scrollUp').removeClass('active');
-//     }
-//   });
-
-//   // scroll when clicked will scroll page up to text area
-//   $('.scrollUp').click(function(event) {
-//     event.preventDefault();
-//     const newTweetSection = $('.new-tweet')
-//     if (newTweetSection.is(':hidden')){
-//       newTweetSection.slideDown('fast')
-//       newTweetSection.find('#tweet-text').focus()
-//     }
-//     $('#tweet-text').focus();
-
-//   });
-
 
 //   // AJAX handling of form submission
 // when checkout button is clicked

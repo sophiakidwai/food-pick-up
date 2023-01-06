@@ -18,6 +18,7 @@ checkoutRoutes.get("/", (req, res) => {
 
 });
 
+
 checkoutRoutes.post('/', (req, res) => {
   console.log({ data: req.body }); //process
 
@@ -75,6 +76,7 @@ checkoutRoutes.post("/confirmed/:id", function(req, res) {
   res.send(`${order_id}`);
 
 });
+
 
 
 let checkoutUpdater = function(cb) {
